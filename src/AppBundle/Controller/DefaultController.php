@@ -46,7 +46,6 @@ class DefaultController extends Controller
         ]);
 
         return $this->render('default/index.html.twig', [
-            'is_submitted'   => false,
             'is_valid'       => $form->isValid(),
             'violation_list' => $violationList,
             'form'           => $form2->createView(),
@@ -71,7 +70,6 @@ class DefaultController extends Controller
             ->validate($entity, null, ['test_group']);
 
         return $this->render('default/index.html.twig', [
-            'is_submitted'   => true,
             'is_valid'       => $form->isValid(),
             'violation_list' => $violationList,
             'form'           => $form->createView(),

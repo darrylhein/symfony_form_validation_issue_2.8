@@ -12,12 +12,10 @@ Something changed in v2.8.10 that caused the form validation to act differently.
 
 In 2.8.9:
 
-- Submitted: `false`
 - Form is valid: `false`
 - Violation list: 1 item
 
 In 2.8.10+:
 
-- Submitted: `false`
 - **Form is valid: `true`**
 - Violation list: 1 item
