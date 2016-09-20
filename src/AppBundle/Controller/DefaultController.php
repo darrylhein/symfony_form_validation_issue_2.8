@@ -34,7 +34,15 @@ class DefaultController extends Controller
                 ->getToken($formName)
                 ->getValue();
 
-            $form->submit(['_token' => $token], false);
+            // generate the "fake" data for the form
+            // based on the existing data in the form
+            // also add the CSRF token so we don't get a CSRF error
+            $fakeData = ['_token' => $token];
+            foreach ($form as $key => $value) {
+                $fakeData[$key] = $value->getViewData();
+            }
+
+            $form->submit($fakeData, false);
         }
 
         $violationList = $this->get('validator')
