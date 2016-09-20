@@ -4,11 +4,3 @@ parameters:
 #    parameter_name: value
 
 services:
-    app.validation.test_validation_group_resolver:
-        class: AppBundle\Validation\TestValidationGroupResolver
-
-    app.form.type.test:
-        class: AppBundle\Form\Type\TestFormType
-        arguments: ["@app.validation.test_validation_group_resolver"]
-        tags:
-            - { name: form.type }
