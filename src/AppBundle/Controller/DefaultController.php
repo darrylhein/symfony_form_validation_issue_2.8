@@ -16,6 +16,9 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $entity = new Test();
+        // minimum chars is 5
+        $entity->setStr('A');
+        dump($entity);
 
         $form = $this->createForm(TestFormType::class, $entity, [
             // 'action' => $this->generateUrl('hom'),
@@ -43,6 +46,7 @@ class DefaultController extends Controller
             }
 
             $form->submit($fakeData, false);
+            dump($entity);
         }
 
         $violationList = $this->get('validator')

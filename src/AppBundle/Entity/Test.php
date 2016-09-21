@@ -26,7 +26,7 @@ class Test
      *
      * @ORM\Column(name="title", type="string", length=255)
      * @Assert\NotBlank(groups={"test_group"})
-     * @Assert\Length(min=2,max=255, groups={"test_group"})
+     * @Assert\Length(min=5,max=255, groups={"test_group"})
      */
     private $str;
 
