@@ -45,7 +45,7 @@ class DefaultController extends Controller
                 $fakeData[$key] = $value->getViewData();
             }
 
-            $form->submit($fakeData, false);
+            $form->submit($fakeData);
             dump($entity);
         }
 
